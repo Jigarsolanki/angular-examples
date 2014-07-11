@@ -1,0 +1,7 @@
+<h1>{{roomName}}</h1>
+<ul id="messages">
+  <li ng-repeat='userMessage in userMessages track by $index'><b>{{userMessage.userName}}:</b> {{userMessage.message}}</li>
+</ul>
+<form action="">
+  <input class="user-name" ng-model='userName'/> <input id="m" autocomplete="off" ng-model='message'/><button ng-click="postMessage()">Send</button>
+</form>
