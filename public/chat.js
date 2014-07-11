@@ -25,7 +25,9 @@ angular
           }
 
           socket.on('ChatMessage', function(msg) {
-            $scope.userMessages.push(msg);
+            $scope.$apply(function() {
+              $scope.userMessages.push(msg);
+            });
           });
         }
       });
