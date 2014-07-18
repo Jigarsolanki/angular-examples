@@ -10,13 +10,14 @@ app.get('/', function(req, res){
 });
 
 io.on('connection', function(socket){
-  console.log('a user connected');
-});
-
-io.on('connection', function(socket){
   socket.on('ChatMessage', function(msg){
-    console.log('message: ' + msg);
+    console.log('message: ' + JSON.stringify(msg));
     io.emit('ChatMessage', msg);
+  });
+
+  socket.on('user:joined', function(msg){
+    console.log('user joined: ' + JSON.stringify(msg));
+    io.emit('user:joined', msg);
   });
 });
 

@@ -1,0 +1,45 @@
+<style type="text/css">
+  .v1-story {
+    border: 1px solid black;
+    width: 150px;
+    height: 150px;
+    margin: 2px;
+    background: #F5FFFF;
+  }
+  .v1-swim-lane {
+    display: inline-block;
+    border: 1px solid black;
+    background-color: #ddd;
+    vertical-align: top;
+  }
+  .v1-description {
+    height: 110px;
+  }
+  .v1-id.defect {
+    background-color: #FFAD99;
+  }
+  .v1-id.story {
+    background-color: #B2F0B2;
+  }
+  .v1-description, .v1-id, .v1-users {
+    margin: 2px 5px;
+  }
+  .v1-swim-lane-header {
+    background-color: orange;
+    font-weight: bold;
+  }
+</style>
+
+<div>
+  <v1-swim-lane name="'Ready'">
+    <v1-story story="story" ng-repeat="story in stories | filter: { status: 'READY' }"></v1-story>
+  </v1-swim-lane>
+
+  <v1-swim-lane name="'In Dev'">
+    <v1-story story="story" ng-repeat="story in stories | filter: { status: 'DEV' }"></v1-story>
+  </v1-swim-lane>
+
+  <v1-swim-lane name="'Done'">
+    <v1-story story="story" ng-repeat="story in stories | filter: { status: 'DONE' }"></v1-story>
+  </v1-swim-lane>
+</div>
