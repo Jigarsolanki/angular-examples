@@ -1,4 +1,5 @@
-angular-chat-client
+angular-examples
 ===================
 
-Simple Angular Chat Client
+npm install 
+bower install 
